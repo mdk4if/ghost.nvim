@@ -1,6 +1,4 @@
-# Ignore Neovim-specific files
 *.swp
 *.swo
 .cache/
 plugged/
-plugged/*
