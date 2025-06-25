@@ -83,4 +83,4 @@ Feel free to fork this repository, make improvements, and submit pull requests. 
 ## Acknowledgments
 
 - Thanks to the Neovim community for the amazing ecosystem.
-- Special thanks to the developers of [Folke](https://github.com/folke) for `lazy.nvim`, `snacks.nvim` , `tokyonight.nvim`.
+- Special thanks to the developers of [Folke](https://github.com/folke) for `lazy.nvim`, `snacks.nvim` and `tokyonight.nvim`.
