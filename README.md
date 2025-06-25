@@ -53,7 +53,7 @@ nvim/
    cd ~/.config/nvim
    ```
 
-2. **Install Dependencies**:
+2. **Execute nvim in terminal**:
    Ensure you have Neovim installed (version 0.9 or higher recommended). Install the required plugins by running Neovim and letting `lazy.nvim` handle the setup:
    ```bash
    nvim
@@ -62,7 +62,7 @@ nvim/
    The first launch will automatically download and install the plugins.
 
 3. **Optional Font**:
-   For the best experience, install a Nerd Font (e.g., FiraCode Nerd Font) and set it in the `options.lua` file:
+   For the best experience, install a Nerd Font (e.g., FiraCode Nerd Font) and set it in the `options.lua` file if using GUI apps like [Neovide](https://neovide.dev/):
    ```lua
    opt.guifont = "FiraCode Nerd Font:h12"
    ```
@@ -80,11 +80,7 @@ nvim/
 
 Feel free to fork this repository, make improvements, and submit pull requests. Issues and feature requests are also welcome!
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Acknowledgments
 
 - Thanks to the Neovim community for the amazing ecosystem.
-- Special thanks to the developers of `lazy.nvim`, `tokyonight.nvim`, `nvim-lspconfig`, and all other included plugins.
+- Special thanks to the developers of [Folke](https://github.com/folke) for `lazy.nvim`, `snacks.nvim` , `tokyonight.nvim`.
