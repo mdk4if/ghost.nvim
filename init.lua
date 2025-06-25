@@ -1,6 +1,0 @@
-require("options")
-require("keymaps")
-require("usercommands.insertlink")
-require("usercommands.followlink")
-require("usercommands.OpenPDF")
-require("config.lazy")
