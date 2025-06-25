@@ -1,139 +1,90 @@
+
 # Neovim Configuration
 
-This is a modern, Lua-based Neovim configuration optimized for productivity, speed, and a smooth editing experience. It leverages `lazy.nvim` for plugin management, includes a curated set of plugins for coding, navigation, and UI enhancements, and features custom keymaps and a dashboard for quick access.
+Welcome to my Neovim configuration repository! This setup is designed to enhance productivity with a modern, modular, and highly customizable environment for coding, writing, and more. Below, you'll find an overview of the configuration, installation instructions, and details about the features and plugins included.
+
+## Overview
+
+This Neovim configuration leverages Lua for configuration files, providing a clean and efficient setup. It includes a variety of plugins for code completion, LSP support, UI enhancements, and more, all managed through the `lazy.nvim` package manager. The configuration is organized into logical groups such as options, keymaps, and plugins, making it easy to maintain and extend.
+
+### Directory Structure
+```
+nvim/
+├── init.lua
+├── lazy-lock.json
+├── lua
+│   ├── custom.lua
+│   ├── keymaps.lua
+│   ├── options.lua
+│   ├── config
+│   │   └── lazy.lua
+│   └── plugins
+│       ├── autopairs.lua
+│       ├── autosave.lua
+│       ├── colorscheme.lua
+│       ├── completion.lua
+│       ├── imageclip.lua
+│       ├── livePreview.lua
+│       ├── lsp.lua
+│       ├── lualine.lua
+│       ├── markview.lua
+│       ├── mason.lua
+│       ├── noice.lua
+│       ├── oil.lua
+│       ├── snacks.lua
+│       ├── treesitter.lua
+```
 
 ## Features
 
-- **Plugin Management**: Uses `lazy.nvim` for efficient, lazy-loaded plugin management to minimize startup time.
-- **Coding Enhancements**:
-  - Autocompletion with `nvim-cmp` and LSP support (`mason.nvim`, `nvim-lspconfig`).
-  - Syntax highlighting and code parsing with `nvim-treesitter`.
-  - Auto-pairs (`nvim-autopairs`) and auto-save (`auto-save.nvim`) for seamless editing.
-- **Navigation**:
-  - File explorer with `oil.nvim`.
-  - Fuzzy finding with `telescope.nvim` for files, buffers, and more.
-- **UI**:
-  - Customizable dashboard (`alpha.nvim`) with an ASCII header and quick-action buttons.
-  - Statusline with `lualine.nvim` and `tokyonight-moon` theme for a sleek look.
-  - Markdown preview and rendering with `markview.nvim`.
-- **Custom Functionality**:
-  - `<leader>nf` keymap to prompt for a filename and open it in a new buffer.
-  - Optimized plugin configurations for performance.
-
-## Directory Structure
-
-```plaintext
-~/.config/nvim/
-├── init.lua              # Main entry point
-├── lazy-lock.json        # Plugin lockfile for lazy.nvim
-├── ftplugin/
-│   └── markdown.lua      # Markdown-specific settings
-├── lua/
-│   ├── keymaps.lua       # Keymap definitions
-│   ├── options.lua       # General Neovim options
-│   ├── config/
-│   │   └── lazy.lua      # lazy.nvim setup
-│   ├── plugins/          # Plugin configurations
-│   │   ├── autopairs.lua
-│   │   ├── autosave.lua
-│   │   ├── completions.lua
-│   │   ├── image-embed.lua
-│   │   ├── lsp.lua
-│   │   ├── lualine.lua
-│   │   ├── markview.lua
-│   │   ├── noice.lua
-│   │   ├── oil.lua
-│   │   ├── telescope.lua
-│   │   ├── tokyonight.lua
-│   │   ├── treesitter.lua
-│   └── usercommands/     # Custom user commands
-│       ├── followlink.lua
-│       ├── insertlink.lua
-│       └── OpenPDF.lua
-```
-
-## Plugins
-
-- **Plugin Manager**: `lazy.nvim`
-- **Coding**:
-  - `nvim-cmp` (autocompletion)
-  - `nvim-lspconfig`, `mason.nvim`, `mason-lspconfig.nvim` (LSP support for Lua and Python)
-  - `nvim-treesitter` (syntax highlighting and indentation)
-  - `nvim-autopairs` (auto-close brackets, quotes, etc.)
-  - `auto-save.nvim` (automatic saving)
-- **Navigation**:
-  - `telescope.nvim` (fuzzy finder)
-  - `oil.nvim` (file explorer)
-- **UI/UX**:
-  - `alpha.nvim` (dashboard)
-  - `lualine.nvim` (statusline)
-  - `tokyonight.nvim` (theme)
-  - `markview.nvim` (Markdown rendering)
-  - `noice.nvim` (enhanced UI for messages and prompts)
-  - `img-clip.nvim` (image embedding)
-- **Dependencies**:
-  - `nvim-tree/nvim-web-devicons` (icons)
-  - `nvim-lua/plenary.nvim` (Telescope dependency)
+- **Modular Configuration**: Organized into separate Lua files for options, keymaps, and plugins.
+- **Plugin Management**: Uses `lazy.nvim` for lazy-loading and efficient plugin management.
+- **Enhanced UI**: Custom statusline with `lualine.nvim`, theme support with `tokyonight.nvim`, and Markdown preview with `markview.nvim`.
+- **Code Completion**: Powered by `nvim-cmp` with LSP and snippet support via `LuaSnip`.
+- **LSP Support**: Configured with `nvim-lspconfig` for multiple languages including Lua, Python, HTML, CSS, and more.
+- **Productivity Tools**: Includes auto-pairs, auto-save, image pasting, live preview, and a powerful file explorer with `oil.nvim`.
+- **Custom Keymaps**: Intuitive mappings for navigation, window management, and plugin interactions.
 
 ## Installation
 
-1. **Install Neovim**:
-   Ensure you have Neovim (v0.9.0 or later) installed.
-
-2. **Clone the Repository**:
-   Clone this configuration to your Neovim config directory:
+1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/<your-username>/<your-repo>.git ~/.config/nvim
+   git clone https://github.com/your-username/nvim-config.git ~/.config/nvim
+   cd ~/.config/nvim
    ```
 
-3. **Start Neovim**:
-   Open Neovim to trigger `lazy.nvim` to install plugins:
+2. **Install Dependencies**:
+   Ensure you have Neovim installed (version 0.9 or higher recommended). Install the required plugins by running Neovim and letting `lazy.nvim` handle the setup:
    ```bash
    nvim
    ```
-   - `lazy.nvim` will automatically download and install all plugins defined in `lua/plugins/`.
-   - Monitor the installation with `:Lazy`.
 
-4. **Verify Setup**:
-   - Check the dashboard (`alpha.nvim`) on startup.
-   - Test keymaps (e.g., `<leader>nf` to open a new file).
-   - Ensure plugins like `telescope.nvim` (`:Telescope find_files`) and LSP work.
+   The first launch will automatically download and install the plugins.
+
+3. **Optional Font**:
+   For the best experience, install a Nerd Font (e.g., FiraCode Nerd Font) and set it in the `options.lua` file:
+   ```lua
+   opt.guifont = "FiraCode Nerd Font:h12"
+   ```
+
+4. **Customize**:
+   Edit `custom.lua` to add your personal configurations or preferences.
 
 ## Usage
 
-- **Keymaps**:
-  - `<leader>nf`: Prompt for a filename and open it in a new buffer.
-  - Use `:Telescope keymaps` to explore other keymaps (if you have `telescope.nvim` configured for keymap discovery).
-- **Dashboard**:
-  - Access quick actions like opening new files, finding files, or editing settings via the `alpha.nvim` dashboard.
-- **Plugins**:
-  - Use `:Lazy` to manage plugins (install, update, or profile performance).
-  - Run `:Mason` to manage LSP servers.
-  - Use `:Telescope` commands for navigation (e.g., `:Telescope live_grep`).
-
-## Customization
-
-- **Add Plugins**:
-  - Create a new file in `lua/plugins/` (e.g., `myplugin.lua`) and define your plugin spec for `lazy.nvim`.
-- **Modify Keymaps**:
-  - Edit `lua/keymaps.lua` to add or change keybindings.
-- **Change Theme**:
-  - Modify `lua/plugins/tokyonight.lua` to use a different `tokyonight` variant or replace with another theme.
-- **Optimize Performance**:
-  - Use `:Lazy profile` to identify slow plugins.
-  - Adjust lazy-loading events in `lua/plugins/*.lua` for faster startup.
+- **Launch Neovim**: Run `nvim` from the terminal.
+- **Keybindings**: Use `<Space>` as the leader key. Check `keymaps.lua` for a full list of custom mappings.
+- **Plugin Commands**: Explore commands like `:LivePreview start` or `<leader>p` for image pasting in Markdown files.
 
 ## Contributing
 
-Contributions are welcome! If you have suggestions, bug fixes, or new features:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature/my-feature`).
-3. Commit your changes (`git commit -m "Add my feature"`).
-4. Push to the branch (`git push origin feature/my-feature`).
-5. Open a pull request.
+Feel free to fork this repository, make improvements, and submit pull requests. Issues and feature requests are also welcome!
 
-## Acknowledgements
+## License
 
-- Inspired by the Neovim community and plugins like `lazy.nvim`, `telescope.nvim`, and `tokyonight.nvim`.
-- Thanks to all plugin authors for their amazing work.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
+## Acknowledgments
+
+- Thanks to the Neovim community for the amazing ecosystem.
+- Special thanks to the developers of `lazy.nvim`, `tokyonight.nvim`, `nvim-lspconfig`, and all other included plugins.
