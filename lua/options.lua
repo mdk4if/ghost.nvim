@@ -56,4 +56,4 @@ opt.splitbelow = true                       -- Horizontal splits below
 opt.splitright = true                       -- Vertical splits right
 opt.equalalways = true                      -- Equalize window sizes
 opt.winminheight = 0                        -- Allow windows to shrink fully
-opt.shell = "pwsh" 
+-- opt.shell = "pwsh" 
