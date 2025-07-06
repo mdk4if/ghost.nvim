@@ -10,11 +10,11 @@ return {
       "hrsh7th/cmp-cmdline", -- Add cmdline completion
       "saadparwaiz1/cmp_luasnip",
       "dnnr1/lorem-ipsum.nvim",
-      {
-        "L3MON4D3/LuaSnip",
-        build = "make install_jsregexp", -- Optional: for regex support in snippets
-        dependencies = { "rafamadriz/friendly-snippets" },
-      },
+      "hrsh7th/cmp-emoji",
+      "gitaarik/nvim-cmp-toggle", {
+      "L3MON4D3/LuaSnip",
+      dependencies = { "rafamadriz/friendly-snippets" },
+    },
     },
     config = function()
       local cmp = require("cmp")
@@ -61,7 +61,7 @@ return {
           -- Disable in comments and certain filetypes
           local context = require("cmp.config.context")
           return not context.in_treesitter_capture("comment") and not context.in_syntax_group("Comment")
-            and vim.bo.buftype ~= "prompt"
+              and vim.bo.buftype ~= "prompt"
         end,
         snippet = {
           expand = function(args)
@@ -113,12 +113,13 @@ return {
           end,
         },
         sources = cmp.config.sources({
-          { name = "nvim_lsp", max_item_count = 10 },
+          { name = "nvim_lsp",   max_item_count = 10 },
           { name = "nvim_lua" },
-          { name = "luasnip", max_item_count = 5 },
-          { name = "buffer", max_item_count = 5 },
+          { name = "luasnip",    max_item_count = 5 },
+          { name = "buffer",     max_item_count = 5 },
           { name = "path" },
           { name = "lorem_ipsum" },
+          { name = "emoji" },
         }),
         window = {
           completion = cmp.config.window.bordered(),
@@ -140,4 +141,6 @@ return {
       })
     end,
   },
+vim.api.nvim_set_keymap('n', '<leader>co', ':NvimCmpToggle<CR>', { noremap = true, silent = true })
 }
+
