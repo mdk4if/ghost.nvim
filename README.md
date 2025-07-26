@@ -49,8 +49,7 @@ nvim/
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/nvim-config.git ~/.config/nvim
-   cd ~/.config/nvim
+   git clone https://github.com/mdk4if/ghost.nvim.git ~/.config/nvim
    ```
 
 2. **Execute nvim in terminal**:
