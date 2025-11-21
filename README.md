@@ -50,6 +50,7 @@ nvim/
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/mdk4if/ghost.nvim.git ~/.config/nvim
+   cp -r .local/share/nvim/lazy/nvim-lspconfig/lsp .config/nvim/lua
    ```
 
 2. **Execute nvim in terminal**:
@@ -83,3 +84,4 @@ Feel free to fork this repository, make improvements, and submit pull requests. 
 
 - Thanks to the Neovim community for the amazing ecosystem.
 - Special thanks to the developers of [Folke](https://github.com/folke) for `lazy.nvim`, `snacks.nvim` and `tokyonight.nvim`.
+
